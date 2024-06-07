@@ -1,30 +1,19 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
-import { useDispatch } from "react-redux";
-import { generatePacket } from "../(tabs)/advertise";
+import Advertise from './advertise';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
 
-  const dispatch = useDispatch(); // Get the dispatch function
+export default function App(): JSX.Element {
 
   return (
-    <View style={styles.container}>
-      <Button 
-        title="Press me"
-        onPress ={() => {
-          dispatch(generatePacket());
-          alert('ad sent');
-        }} />
-    </View>
+    <NavigationContainer>{
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Advertise} />
+      </Stack.Navigator>       
+    }</NavigationContainer>
+
   );
-
+  
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
