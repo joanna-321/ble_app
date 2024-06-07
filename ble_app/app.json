@@ -19,7 +19,12 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_ADVERTISE"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -31,6 +36,19 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "7aa9ad0a-f30c-4b58-863a-90351496a22f"
+      }
+    }
+  },
+  "extra": {
+    "eas": {
+      "projectId": "<your-project-id>"
     }
   }
 }
